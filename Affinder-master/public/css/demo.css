@@ -1,0 +1,191 @@
+/*Pop Up Styles*/
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 1200px;
+    height: 200px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popuptext ul li{
+    list-style-type: none;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+/*App Styles*/
+/*Top Styles*/
+#affButton{
+  font-size: 18px;
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border:1px black solid;
+}
+
+#crawlSitesDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    border: 1px darkgray solid;
+    background-color: darkgray;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 0px;
+}
+
+#crawlSitesDiv a{
+    text-decoration: none;
+    color: white;
+}
+
+#crawlSitesDiv:hover {
+    /*box-shadow: 0 12px 16px 0 midnightblue, 0 17px 50px 0 midnightblue;*/
+}
+
+.crawlSitesDropDown{
+    display: none;
+    width: 500px;
+    height: 200px;
+    border: 1px black solid;
+    background-color: black;
+    margin-left: 700px;
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    border-radius: 5px
+}
+
+.crawlSitesDropDown section p{
+    font-size: 12px;
+}
+/* Search bar */
+.crawlSitesDropDown input{
+     width: 300px;
+    margin: 5px;
+}
+
+#searchContainer img{
+    height: 33px;
+    position: absolute;
+    right: 156px;
+    top: 1px;
+
+}
+
+
+#companyDiv{
+    display: flex;
+    justify-content: center;
+    padding: 5px 20px 20px 20px;
+}
+
+#topTray{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: center;
+    border: 1px black solid;
+    padding: 20px 0 20px 0;
+    background-color: black;   
+}
+
+#companyDiv img{
+    text-align: center;
+}
+/*Side Tray Styles*/
+.leftSidePopOut1{
+    width: 250px;
+    height: 1200px;
+    border: 1px black solid;
+    background-color: black;
+    /*padding-top: 50px;*/
+    display: none;
+    float: left;
+}
+
+#newSitesDiv{
+    border: 1px darkgray solid;
+    margin: 20px 0px 20px 0px;
+    padding: 20px 0px 20px 5px;
+    background-color: darkgray;
+    color:black;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.catLinks{
+    text-decoration: none;
+    color: white;
+    padding: 0px 0px 0px 10px;
+}
+
+/*Middle Area Styles*/
+#headlines{
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-end;
+    margin-right: 50px
+}
+
+.widgets{
+    padding: 310px
+}
+
+#mainDiv{
+    /*padding: 50px 100px 50px 100px;*/
+    width: 700px;
+    border: 5px black solid;
+    margin-left:250px;
+}
+
+#mainDiv h2{
+    color: midnightblue
+}
+.article{
+    padding-left: 50px;
+}
+.article a{
+    text-decoration: none;
+    color: midnightblue;
+}

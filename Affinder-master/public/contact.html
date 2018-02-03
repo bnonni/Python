@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Affinder</title>
+    <link type=text/css rel="stylesheet" href="css/style.css">
+    <link type=text/css rel="stylesheet" href="css/contact.css">
+    <link type=text/css rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="main-contain">
+        <header>
+            <h1><a href="index.html">Affinder</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+        </header>
+    <section id="main">
+            <section id="contact">
+                <form action="demo.html" method="POST">
+                    <h3>Register Now!</h3>
+                    <label for="name">Name:</label>
+                        <input type="text" placeholder="John Doe" id="name" name="name" required="" data-parsley-group="block1"/>
+                    <label for="email">Email:</label>
+                        <input type="email" placeholder="hello@gmail.com" id="email" name="email" required=""/>
+                    <label for="phone">Phone:</label>
+                        <input type="tel" placeholder="XXX-XXX-XXXX" id="phone" name='phone' required=""/>
+                    <label for="state"> State:</label>
+                        <select name="state" id="state" required="">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="MA">Masachusetts</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    <label for="password">Password:</label>
+                        <input type="password" placeholder="*********" id="password" name="password" required=""/>
+                        <input type="checkbox" value="yes" name="terms" id="terms-box" required="">
+                    <label for="terms" id="terms">I agree to the terms</label>						
+                        <a href="demo.html"><input id="submit-btn" type="submit" value="Register Now!" href="demo.html"></a>
+                </form>
+            </section>
+    </section>
+    <footer>
+        <div class="social-media">
+            <img src="images/a.png" id="icon">
+            <a href=http://www.facebook.com><img src="images/FB-logo.png"></a>
+            <a href="http://www.twitter.com"><img src="images/TW-logo.png"></a>
+            <a href="http://www.linkedin.com"><img src="images/LNK-logo.png"></a>
+            <a href="http://www.instagram.com"><img src="images/IG-logo.png"></a>
+        </div>
+        <script src="scripts/jquery-3.1.0.min (1).js"></script>
+        <script src="scripts/parsley.min.js"></script>
+        <script src="scripts/index.js"></script>
+    </footer>
+</body>
+</html>

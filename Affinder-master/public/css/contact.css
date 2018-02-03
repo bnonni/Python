@@ -1,0 +1,180 @@
+/*------------Small Mobile------------*/
+body{
+  width: 960px;
+  height: 100%
+}
+
+#main #contact h3{
+  color: midnightblue;
+  padding-left: 20px;
+  padding-top: 100px;
+}
+
+form{
+  height: 875px;
+  width: 500px
+}
+
+label{
+  color: midnightblue;
+  font-weight: 600;
+  display: block;
+  margin-right: 100px;
+  clear: both;
+  float: left;
+  line-height: 80px;
+  padding-left: 50px;
+  outline: none;
+}
+
+#name{
+  margin-top: 25px
+}
+
+#email{
+  margin-top: 25px
+}
+
+#phone{
+  margin-top: 25px
+}
+
+#state{
+  margin-top: 25px
+}
+
+select{
+ height: 45px;
+ padding-left: 50px;
+ margin-top: 500px
+}
+
+#password{
+  margin-top: 31px
+}
+
+#terms{
+   margin-top: 67px;
+   position: relative;
+   right: 126px
+}
+
+#terms-box{
+    margin-top: 113px;
+    margin-left: -146px;
+}
+
+input, select{
+  float: right;
+  border: none;
+  border-bottom: solid 1px #000;
+  line-height: 80px;
+}
+
+ul li{
+  clear: both;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"]{
+  float: left;
+}
+
+input[type="checkbox"] + label{
+  clear: none;
+  margin-top: 10px;
+  display: inline-block;
+  line-height: 0;
+  padding: 0;
+}
+
+input[type="submit"]{
+  background-color: midnightblue;
+  border: solid 1px white;
+  font-size: 14px;
+  color: #fff;
+  margin-top: -15px;
+}
+
+.bs-callout-warning{
+  display: none
+}
+
+.bs-callout-info{
+  display: none;
+}
+/*------------Mobile------------*/
+@media(min-width: 750px){
+body{
+  width: 960px;
+  height: 100%
+}
+#main #contact h3{
+  color: midnightblue;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+#contact form{
+  width: 782px;
+  padding-left: 167px;
+  height: 575px;
+}
+
+label{
+  display: block;
+  margin-right: 100px;
+  clear: both;
+  float: left;
+  line-height: 60px;
+}
+
+input, select{
+  float: right;
+  border: none;
+  border-bottom: solid 1px #000;
+  line-height: 40px;
+}
+
+select{
+ height: 45px;
+}
+
+ul li{
+  clear: both;
+  line-height: 20px;
+  margin-bottom: 10px
+}
+
+input[type="radio"], input[type="checkbox"]{
+  float: left;
+}
+
+input[type="checkbox"] + label{
+  clear: none;
+  margin-top: 10px;
+  display: inline-block;
+  line-height: 0;
+  padding: 0;
+}
+
+input[type="submit"]{
+  background-color: midnightblue;
+  border: solid 1px white;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 56px
+}
+}
+/*------------Tablet & Desktop------------*/
+@media(min-width: 1200px){
+body{
+  width: 1440px
+}
+
+#contact form {
+    width: 970px;
+    padding-left: 332px;
+    height: 575px;
+}

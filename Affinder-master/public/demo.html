@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Affinder Demo</title>
+    <link type=text/css rel='stylesheet' href='css/demo.css'>
+    <link type=text/css rel='stylesheet' href='css/style.css'>
+    <link type=text/css rel='stylesheet' href='css/normalize.css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+</head>
+<body>
+    <div id='main-contain'></div>
+        <div id='topTray'>
+            <h1><a href='index.html' id='affButton'>Affinder</a></h1>
+            <div id='crawlSitesDiv'><a href='#'>Crawl for Sites</a></div>
+        </div>
+    <div class='leftSidePopOut1'>
+        <div id='companyDiv'><img src='images/360i.png' /></div>
+        <a href='#'>
+            <div id='newSitesDiv'>
+                <div class='popup' onclick='myFunction()'>See Database<span class='popuptext' id='myPopup'></span></div>
+            </div>
+        </a>
+        
+        <br />
+        <!--<div id='categoriesDiv'>Categories
+            <ol>
+                <li><a href='#' class='catLinks'>Retail</a></li>
+                <li><a href='#' class='catLinks'>Travel</a></li>
+                <li><a href='#' class='catLinks'>Health</a></li>
+                <li><a href='#' class='catLinks'>Finance</a></li>
+            </ol>
+               <a href='#' class='catLinks'><div class='popup' onclick='myFunction()'>See More
+            <span class='popuptext' id='myPopup2'> See More</span></div></div></a>-->
+        </div>
+        <br />
+    </div>
+
+     <div class='crawlSitesDropDown'>
+        <input type='text' placeholder='enter keyword here' id='keyword' name='keyword' value='' >
+        <div id='searchContainer'>
+            <a href='#'><img id='searchOnClick' src='images/search.png' alt='' /></a>
+        </div>
+    </div>
+    <div class='widgets'></div>
+    <div id='mainDiv'>
+        <h2>Latest Headlines</h2>
+        <article class='article'>
+             <section id='articleContent0'>
+                <a id=postLink0 href='#' target='_blank'><h3 id='title0'></h3></a>
+            </section>
+        </article>
+        <article class='article'>
+            <section id='articleContent1'>
+                <a id=postLink1 href='#' target='_blank'><h3 id='title1'></h3></a>
+            </section>
+        </article>
+        <article class='article'>
+             <section id='articleContent2'>
+                <a id=postLink2 href='#' target='_blank'><h3 id='title2'></h3></a>
+            </section>
+        </article>
+        <article class='article'> 
+            <section id='articleContent3'>
+                <a id=postLink3 href='#' target='_blank'><h3 id='title3'></h3></a>
+            </section>
+        </article>
+        <!--<article class='article'>
+            <section id='articleContent4'>
+                <a id=postLink4 href='#' target='_blank'><h3 id='title4'></h3></a>
+            </section>
+        </article>
+        <article class='article'>
+            <section id='articleContent5'>
+                <a id=postLink5 href='#' target='_blank'><h3 id='title5'></h3></a>
+            </section>
+        </article>
+        <article class='article'>
+               <a id=postLink7 href='#' target='_blank'><h3 id='title7'></h3></a>
+        </article>
+        <article class='article'> 
+                <a id=postLink8 href='#' target='_blank'><h3 id='title8'></h3></a>
+        </article>
+        <article class='article'> 
+                <a id=postLink9 href='#' target='_blank'><h3 id='title9'></h3></a>
+        </article>
+        <article class='article'> 
+                <a id=postLink10 href='#' target='_blank'><h3 id='title10'></h3></a>
+        </article>-->
+    </div>
+</body>
+<script src='scripts/jquery-3.1.0.min (1).js'></script>
+<script src='https://www.gstatic.com/firebasejs/3.6.2/firebase.js'></script>
+<script src='scripts/keys.js'></script>
+<script src='scripts/index.js'></script>
+<script src='scripts/require.js'></script>
+<script src='scripts/express.js'></script>
+<script src='node-web-scrape/server.js'></script>
+</html>

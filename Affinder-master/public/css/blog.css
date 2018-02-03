@@ -1,0 +1,86 @@
+/*Small Mobile*/
+article .post-one{
+    width: 100%
+}
+
+.find-contain{
+    width: 100x;
+}
+
+img{
+    width: 40%;
+    float: left;
+}
+.post{
+    width: 1086px
+}
+
+.post p{
+    color: midnightblue;
+    margin-left: 500px;
+    width: 900px;
+}
+
+.post-two{
+    width: 1086px
+}
+.post-two h2{
+    padding-top: 123px
+}
+
+.post-two p{
+    color: midnightblue;
+    margin-top: 18px;
+    margin-left: 500px;
+    width: 900px;
+}
+
+article h2{
+    margin: 0;
+    padding: 50px 0 20px 0;
+}
+
+.hide{
+    display: none
+}
+
+#bottom-cta{
+    margin-top: 195px;
+    margin-bottom: 50px
+}
+
+
+footer nav ul{
+  padding-left: 200px
+}
+
+footer nav ul li{
+  font-size: 18px;
+  display: inline-block;
+  font-weight: bold;
+  list-style-type: none;
+  padding: 0 0 0 30px;
+}
+
+footer nav ul li a{
+  text-decoration: none;
+  color: darkgray
+}
+
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: midnightblue;
+}
+
+footer a{
+  text-decoration: none;
+  font-size: 15px
+}
+
+/*Mobile*/
+@media(min-width: 750px){
+    body{
+        margin: auto;
+    }
+}
