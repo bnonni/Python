@@ -22,14 +22,21 @@ def google_search_screenshots(screen_folder):
     """
     """
     driver = webdriver.Firefox()
-    driver.get('https://www.ebates.com', 'https://www.retailmenot.com', 'https://www.couponcabin.com', 'https://www.groupon.com')
-    driver.implicitly_wait(5)
-    driver.save_screenshot(os.path.join(screen_folder, '{}.png'.format(screen_folder)))
-    driver.sleep(5)
+    print (driver.get_window_size())
+    
+    driver.set_window_size(1280, 10000)
+    print (driver.get_window_size())
+    websites = ['https://www.retailmenot.com', 'https://www.ebates.com', 'https://www.couponcabin.com', 'https://www.groupon.com/coupons']
+    for website in websites:
+        driver.get(website)
+        driver.implicitly_wait(10)
+        time.sleep(5)
+        driver.save_screenshot(os.path.join(screen_folder, '{}.png'.format(screen_folder)))
+        
     driver.close()
     
 ## Checking
-data_path = datetime.strftime(datetime.today(), '%Y-%m-%d %H-%M')
+data_path = datetime.strftime(datetime.today(), '%Y-%m-%d %H-%M-%S')
 
 if data_path in os.listdir(os.getcwd()):
     pass
