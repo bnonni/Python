@@ -6,7 +6,6 @@ aux/
 *.zip
 *.log
 *.docx
-*.png
 docs
 *.xml
 *.iml
