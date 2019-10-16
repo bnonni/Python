@@ -1,0 +1,13 @@
+*.exe
+*.pdf
+.ipynb_checkpoints/
+.ipynb_checkpoints/*
+aux/
+*.zip
+*.log
+*.docx
+*.png
+docs
+*.xml
+*.iml
+*.csv
