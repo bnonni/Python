@@ -53,11 +53,11 @@
 #     <li>Predictive Model Analysis Using Decision Tree.</li>
 # </ol>
 
-# In[214]:
+# In[1]:
 
 
 # Import all packages
-# get_ipython().run_line_magic('matplotlib', 'inline')
+get_ipython().run_line_magic('matplotlib', 'inline')
 
 import os
 import gc
@@ -82,7 +82,7 @@ from sklearn.metrics import recall_score, precision_score, accuracy_score, f1_sc
 np.random.seed(42)
 
 
-# In[215]:
+# In[2]:
 
 
 # Read in data
@@ -98,48 +98,43 @@ df.keys()
 
 # #### Initial view of dataset overall (head, tail, sample, shape, describe)
 
-# In[216]:
+# In[3]:
 
 
 # Review top 5 to get idea of data set
 df.head()
 
 
-# In[217]:
+# In[4]:
 
 
 # Review last 5 for good measure
 df.tail()
 
 
-# In[218]:
+# In[5]:
 
 
 # Show me a sample of 20 to better understand the data's randomness
 df.sample(20)
 
 
-# In[219]:
+# In[6]:
 
 
 # How many samples and how many features? 
 df.shape
 
 
-# In[220]:
+# In[7]:
 
 
 df.describe(include='all')
 
 
 # ## What percentage of the samples converted vs. did not?
-# #### Process: 
-# <ul><li>Isolate converted (1) and not converted (0)</li>
-#     <li>Create pie chart</li>
-#     <li>QA using value_counts</li>
-# </ul>
 
-# In[221]:
+# In[8]:
 
 
 fig, ax = plt.subplots(1, 1)
@@ -148,7 +143,7 @@ plt.axis('equal')
 plt.ylabel('')
 
 
-# In[222]:
+# In[9]:
 
 
 # Check pie chart accuracy
@@ -163,7 +158,7 @@ print(f'Count:\n{df.converted.value_counts()}\n\nPercent:\n{df.converted.value_c
 # #### 2. What is the count of each discrete feature's value that produced a conversion (i.e. Browser=firefox)?
 # #### 3. What proportion of the overall feature does that value represent?
 
-# In[223]:
+# In[10]:
 
 
 def cvrDoubleHist(v, x, t, l):
@@ -181,7 +176,7 @@ def cvrSingleHist(v, x, t, l):
     ax1.set_ylabel('# of Conversions')
 
 
-# In[224]:
+# In[11]:
 
 
 # Value counts of each features static entires.
@@ -195,18 +190,6 @@ for x in discrete:
     print(f'{name} count: \n{vc}\n\n% of total {name}: \n{round(vc/sum(vc)*100, 2)}\n\ncnv cnt by {name} count:\n{f_vc}\n\n% cvr of each {name}\n{fv_prop}\n------------------------------')
     cvrDoubleHist(len(vc), x, f'{name} Conversions (green) / Non-Conversions (red)', name)
     cvrSingleHist(len(vc), x, f'{name} Conversions', name)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
 
 # ## <u>Data Analysis - Discrete Features</u>
@@ -245,20 +228,20 @@ for x in discrete:
 # #### 2. What is the distribution of each continuous feature against the outcomes?
 # #### 3. What do the distributions tell me about these features?
 
-# In[225]:
+# In[12]:
 
 
 df['%_payment'] = round((df['previous_payment_amount']/df['total_amount_due'])*100, 4)
 df['visiting_time'] = round((df['visiting_time']/60),2)
 
 
-# In[226]:
+# In[13]:
 
 
 df.head()
 
 
-# In[227]:
+# In[14]:
 
 
 viz_df = df.drop(['browser', 'campaign', 'previous_visitor', 'day_of_week', 'traffic_source'], axis=1)
@@ -267,7 +250,7 @@ viz_df = viz_df.reindex(columns=cols)
 viz_df.head()
 
 
-# In[228]:
+# In[15]:
 
 
 def scatterContinous(x, y):
@@ -277,7 +260,7 @@ def scatterContinous(x, y):
     ax.set_ylabel('Converted')
 
 
-# In[229]:
+# In[16]:
 
 
 continuous = [df.visiting_time, df.total_amount_due, df.previous_payment_amount]
@@ -286,7 +269,7 @@ for x in continuous:
     scatterContinous(x, df.converted)
 
 
-# In[230]:
+# In[17]:
 
 
 import seaborn as sns
@@ -306,165 +289,7 @@ plt.show()
 
 # ## Decision Tree Classifier
 
-# ### Use Decision Tree for Feature Predictive Accuracy
-
-# In[231]:
-
-
-# encode = df
-# le = LabelEncoder()
-# encode['browser'] = le.fit_transform(df.browser)
-# encode['day_of_week'] = le.fit_transform(df.day_of_week)
-# encode['campaign'] = le.fit_transform(df.campaign)
-# encode['traffic_source'] = le.fit_transform(df.traffic_source)
-
-encode = pd.get_dummies(df)
-# encode = encode.drop('%_payment', axis=1)
-encode.head(10)
-
-
-# In[232]:
-
-
-X = encode.drop(['converted', 'visiting_time', 'total_amount_due', 'previous_payment_amount'], axis=1)
-y = encode['converted'].values
-
-
-# In[233]:
-
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=0)
-
-DTC = DecisionTreeClassifier()
-
-
-# In[234]:
-
-
-DTC = DTC.fit(X_train, y_train)
-
-print('Train Accuracy Score:', DTC.score(X_train, y_train))
-print('Test Accuracy Score:', DTC.score(X_test, y_test))
-
-
-# In[235]:
-
-
-y_pred = DTC.predict(X_test)
-
-
-# In[236]:
-
-
-confusion_matrix(y_test, y_pred)
-
-
-# In[237]:
-
-
-pd.crosstab(y_test, y_pred, rownames=['Actual'], colnames=['Predicted'], margins=True)
-
-
-# In[238]:
-
-
-print(classification_report(y_test, y_pred))
-
-
-# In[239]:
-
-
-y_pred_proba = DTC.predict_proba(X_test)[:,1]
-
-fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
-plt.plot([0,1],[0,1], 'k--')
-plt.plot(fpr, tpr, label='KNN')
-plt.xlabel('fpr')
-plt.ylabel('tpr')
-plt.title('DT ROC Curve')
-plt.show()
-
-
-# In[240]:
-
-
-roc_auc_score(y_test, y_pred_proba)
-
-
-# In[241]:
-
-
-del df, encode
-gc.collect()
-
-
-# In[242]:
-
-
-features = X.columns
-dot_data = StringIO()
-export_graphviz(DTC, out_file=dot_data, filled=True, rounded=True, special_characters=True, feature_names=features, class_names=['Not Converted','Converted'])
-
-
-# In[ ]:
-
-
-graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
-# graph.write_png('Conversion_Path.png')
-Image(graph.create_png())
-
-
-# In[244]:
-
-
-dtc = DecisionTreeClassifier(criterion='entropy', max_depth=6)
-dtc = dtc.fit(X_train, y_train)
-print('Train Accuracy Score:', dtc.score(X_train, y_train))
-print('Test Accuracy Score:', dtc.score(X_test, y_test))
-
-
-# In[245]:
-
-
-y_pred = dtc.predict(X_test)
-confusion_matrix(y_test, y_pred)
-
-
-# In[246]:
-
-
-pd.crosstab(y_test, y_pred, rownames=['Real'], colnames=['Predicted'], margins=True)
-
-
-# In[247]:
-
-
-y_pred_proba = dtc.predict_proba(X_test)[:,1]
-
-
-# In[248]:
-
-
-fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
-plt.plot([0,1],[0,1], 'k--')
-plt.plot(fpr, tpr, label='KNN')
-plt.xlabel('fpr')
-plt.ylabel('tpr')
-plt.title('DT ROC Curve')
-plt.show()
-
-
-# In[249]:
-
-
-roc_auc_score(y_test, y_pred_proba)
-
-
-# In[ ]:
-
-
-
-
+# #### See next notebook: [Decision_Tree.ipynb](./Decision_Tree.ipynb)
 
 # In[ ]:
 
