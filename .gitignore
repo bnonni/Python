@@ -9,3 +9,5 @@ docs
 *.xml
 *.iml
 *.csv
+.DS_store
+*/.DS_store
