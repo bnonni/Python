@@ -1,11 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 def strToInt(str_):
     result = ""
-    c = str_.toCharArray()
-    i = 0
-    while i < c.length:
+    c = list(str_)
+    for i in range(len(c)):
         temp = c[i]
         result += temp + " "
-        i += 1
     return result
 
+print(strToInt('Apple'))

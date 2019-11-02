@@ -38,27 +38,21 @@ def KeyGenerator(L4PN):
     k = str(a) + " " + str(a_inv) + " " + str(b)
     return k
 
-def strToInt(strng):
-    c = list(strng); 
-    result = ""
-    for i in range(len(c)):
-        temp = c[i]
-        result += temp + " "
-        return result
-
-def encryption(key, a, b, a_inverse, LP4N, content):
+def encryption(key, content):
+    key = key.split(" ")
+    a = key[0]
+    b = key[2]
     ciphertext = ""
-    ASCcode = strToInt(content)
-    Int_ASC = ACScode.split("")
-    i = 0
-    for i in range(len(Int_ACS)):
-        ciphertext = ciphertext + temp + ""
-        i += 1
+    ASCcode = list(content)
+    exit()
+    for i in range(len(ASCcode)):
+        temp = ord(ASCcode[i]) * a + b;
+        ciphertext = ciphertext + temp
     return ciphertext
     
 panther_id = 6449
 key = KeyGenerator(panther_id)
-encryption(key, panther_id, "Apple")
+print(encryption(key, "Apple"))
 
 
 
@@ -71,4 +65,12 @@ encryption(key, panther_id, "Apple")
     for i in range(len(content_lst)):
         temp = int(content_lst[i]) * a + b
         ciphertext = ciphertext + temp + ""
-    return ciphertext"""
+    return ciphertext
+    
+    def strToInt(strng):
+        c = list(strng); 
+        result = ""
+        for i in range(len(c)):
+            temp = c[i]
+            result += temp + " "
+            return result"""
