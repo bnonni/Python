@@ -46,6 +46,7 @@ def strToInt(strng):
         result += temp + " "
         return result
 
+<<<<<<< Updated upstream
 
 def encryption(key, L4PN, content):
     a = key[0]
@@ -61,3 +62,14 @@ def encryption(key, L4PN, content):
 panther_id = 6449
 key = KeyGenerator(panther_id)
 encryption(key, panther_id, "Apple")
+=======
+def Encryption(key, a, b, a_inverse, LP4N, content):
+    ciphertext = ""
+    ASCcode = strToInt(content)
+    Int_ASC = ACScode.split("")
+    i = 0
+    while i < Int_ACS.length:
+        ciphertext = ciphertext + temp + ""
+        i += 1
+    return ciphertext
+>>>>>>> Stashed changes
