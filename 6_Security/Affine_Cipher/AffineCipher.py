@@ -31,16 +31,33 @@ def KeyGenerator(L4PN):
         if(GCD(i, L4PN)):
             A_list.append(i)
     
-    b = int(random() * len(A_list))
-    a = A_list[rand_int]
-    a_inv = a_inverse(A_list[rand_int], L4PN)
-    # b = rand_int
-    # print(a * a_inv % 6449)
-    # exit()
-    temp = str(a) + " " + str(a_inv) + " " + str(b)
-    return temp
+    rand_index = int(random() * len(A_list))
+    a = A_list[rand_index]
+    a_inv = a_inverse(A_list[rand_index], L4PN)
+    b = rand_index
+    k = str(a) + " " + str(a_inv) + " " + str(b)
+    return k
 
-key = KeyGenerator(6449)
-print(key)
+def strToInt(strng):
+    c = list(strng); 
+    result = ""
+    for i in range(len(c)):
+        temp = c[i]
+        result += temp + " "
+        return result
 
-# print(a_inverse(2, 6449))
+
+def encryption(key, L4PN, content):
+    a = key[0]
+    b = key[2]
+    ciphertext = ""
+    content_str = strToInt(content)
+    content_lst = list(content.split(" "))
+    for i in range(len(content_lst)):
+        temp = int(content_lst[i]) * a + b
+        ciphertext = ciphertext + temp + ""
+    return ciphertext
+    
+panther_id = 6449
+key = KeyGenerator(panther_id)
+encryption(key, panther_id, "Apple")
