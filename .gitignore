@@ -1,8 +1,5 @@
 *.exe
 *.pdf
-.ipynb_checkpoints/
-.ipynb_checkpoints/*
-aux/
 *.zip
 *.log
 docs
@@ -10,4 +7,6 @@ docs
 *.iml
 *.csv
 .DS_store
-*/.DS_store
+.vscode/
+.ipynb_checkpoints/
+aux/
