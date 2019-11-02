@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-def Decryption(a, a_inverse, b, L4PN, ciphertext):
-    """ generated source for method Decryption """
+def decryption(a, a_inverse, b, L4PN, ciphertext):
     plaintext = ""
     int_ciph = ciphertext.split("")
     i = 0
-    while i < int_ciph.length:
+    while i < len(int_ciph):
+        temp = ((int(int_ciph[i]) - b) * a_inverse) % L4PN
         if temp < 0:
             temp = temp + L4PN
         plaintext = plaintext + temp + ""
