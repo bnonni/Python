@@ -46,17 +46,23 @@ def strToInt(strng):
         result += temp + " "
         return result
 
-def Encryption(key, a, b, a_inverse, LP4N, content):
+def encryption(key, a, b, a_inverse, LP4N, content):
     ciphertext = ""
     ASCcode = strToInt(content)
     Int_ASC = ACScode.split("")
     i = 0
-    while i < Int_ACS.length:
+    for i in range(len(Int_ACS)):
         ciphertext = ciphertext + temp + ""
         i += 1
     return ciphertext
+    
+panther_id = 6449
+key = KeyGenerator(panther_id)
+encryption(key, panther_id, "Apple")
 
-def encryption(key, L4PN, content):
+
+
+"""def encryption(key, L4PN, content):
     a = key[0]
     b = key[2]
     ciphertext = ""
@@ -65,8 +71,4 @@ def encryption(key, L4PN, content):
     for i in range(len(content_lst)):
         temp = int(content_lst[i]) * a + b
         ciphertext = ciphertext + temp + ""
-    return ciphertext
-    
-panther_id = 6449
-key = KeyGenerator(panther_id)
-encryption(key, panther_id, "Apple")
+    return ciphertext"""
