@@ -88,21 +88,18 @@ def readKeys(key_file):
             break
         keys.append(key.strip())
     return keys
-
-
-panther_id = 6449
-# writeKeys('keys.txt', panther_id)
-keys = readKeys('keys.txt')
-encryption(key, plain_text):
     
-    # def initCipher(message):
-    # for key in keys:
-    #     # print('key:', key)
-    #     cipher_text = encryption(key, message)
-    #     print('cipher_text:', cipher_text)
-    # for key in keys:
-    #     plain_text = decryption(key, panther_id, cipher_text)
-    #     print('plain_text:', plain_text)
+def initCipher(message):
+    panther_id = 6449
+    writeKeys('keys.txt', panther_id)
+    keys = readKeys('keys.txt')
+    for key in keys:
+        # print('key:', key)
+        cipher_text = encryption(key, message)
+        print('cipher_text:', cipher_text)
+    for key in keys:
+        plain_text = decryption(key, panther_id, cipher_text)
+        print('plain_text:', plain_text)
     
-# if __name__ == '__main__':
-#     initCipher('Apple')
+if __name__ == '__main__':
+    initCipher('Apple')
