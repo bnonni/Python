@@ -52,29 +52,11 @@ def encryption(key, content):
         # print(cipher_text)
         cipher_text += tmp + " "
     return cipher_text
-    
-panther_id = 6449
-key = KeyGenerator(panther_id)
-cipher = encryption(key, "Apple")
-print(cipher)
 
-"""
-def encryption(key, L4PN, content):
-    a = key[0]
-    b = key[2]
-    ciphertext = ""
-    content_str = strToInt(content)
-    content_lst = list(content.split(" "))
-    for i in range(len(content_lst)):
-        temp = int(content_lst[i]) * a + b
-        ciphertext = ciphertext + temp + ""
-    return ciphertext
-    
-    def strToInt(strng):
-        c = list(strng)
-        result = ""
-        for i in range(len(c)):
-            temp = c[i]
-            result += temp + " "
-            return result
-"""
+def main():
+    f = open('keys.txt', 'a')
+    for i in range(11):
+        f.write(KeyGenerator(6449))
+    exit()
+    cipher = encryption(key, "Apple")
+    print(cipher)
