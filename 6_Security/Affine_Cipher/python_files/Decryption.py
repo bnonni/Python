@@ -11,4 +11,3 @@ def decryption(a, a_inverse, b, L4PN, ciphertext):
         plaintext = plaintext + temp + ""
         i += 1
     return plaintext
-
