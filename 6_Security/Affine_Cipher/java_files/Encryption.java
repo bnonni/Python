@@ -1,5 +1,10 @@
 
 public class Encryption {
+ public static void main(String[] args) {
+  Decryption d = new Decryption();
+  d.Example();
+ }
+
  public String Encryption(String key, int a, int b, int a_inverse, int LP4N, String content) {
   String ciphertext = "";
   String ASCcode = AC.strToInt(content);

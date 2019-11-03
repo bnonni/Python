@@ -11,4 +11,8 @@ public class Decryption {
         }
         return plaintext;
     }
+
+    public void Example() {
+        System.out.println("Hello World!");
+    }
 }

@@ -18,7 +18,7 @@ def GCD(inp1, inp2):
     if(inp1 == 1 and inp2 == 0):
         return True
     elif(inp2 == 1 and inp1 == 0):
-        return True;
+        return True
     else: 
         return False
     
@@ -39,24 +39,27 @@ def KeyGenerator(L4PN):
     return k
 
 def encryption(key, content):
+    cipher_text = ""
     key = key.split(" ")
-    a = key[0]
-    b = key[2]
-    ciphertext = ""
-    ASCcode = list(content)
-    exit()
-    for i in range(len(ASCcode)):
-        temp = ord(ASCcode[i]) * a + b;
-        ciphertext = ciphertext + temp
-    return ciphertext
+    a = int(key[0])
+    b = int(key[2])
+    # print(a, b)
+    asci = list(content)
+    # print(ASCcode)
+    for i in range(len(asci)):
+        # print(ord(ASCcode[i]))# exit()
+        tmp = str(ord(asci[i]) * a + b)
+        # print(cipher_text)
+        cipher_text += tmp + " "
+    return cipher_text
     
 panther_id = 6449
 key = KeyGenerator(panther_id)
-print(encryption(key, "Apple"))
+cipher = encryption(key, "Apple")
+print(cipher)
 
-
-
-"""def encryption(key, L4PN, content):
+"""
+def encryption(key, L4PN, content):
     a = key[0]
     b = key[2]
     ciphertext = ""
@@ -68,9 +71,10 @@ print(encryption(key, "Apple"))
     return ciphertext
     
     def strToInt(strng):
-        c = list(strng); 
+        c = list(strng)
         result = ""
         for i in range(len(c)):
             temp = c[i]
             result += temp + " "
-            return result"""
+            return result
+"""
