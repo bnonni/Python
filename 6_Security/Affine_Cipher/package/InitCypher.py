@@ -19,4 +19,5 @@ def initCipher(panther_id, message, file_name):
         print()
     
 if __name__ == '__main__':
-    initCipher(6449, 'Apple', 'keys.txt')
+        message = argv[1]
+        initCipher(6449, message, 'keys.txt')

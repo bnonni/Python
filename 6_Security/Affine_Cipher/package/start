@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Welcome to Affine Cipher PyCryption."
+sleep 0.5
+read -p "Enter a message: " H
+./InitCypher.py $H
