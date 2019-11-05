@@ -2,13 +2,13 @@
 
 1. [FundamentalPy](./1_Fundamentals)
 
-2. [Py++](./2_Intermediate)
+2. [Py++](./2_Packages)
    - Weather API
    - Matplotlib Data Viz
    - Panda Manipulation
    - More Advanced Programs & Scripting
 
-3. [PyApps](./3_App_Frameworks)
+3. [PyApps](./3_Flask_Apps)
    - Flask
    - SQLite
    - SQLAlchemy
