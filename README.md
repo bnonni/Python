@@ -25,8 +25,9 @@
    - Website QA
 
 6. [PyHacking](./6_Security)
-   - Password Salt Generator
-   - Brute Force Password Cracker
+   - Password Salt Generator & Brute Force Password Cracker
+   - Stream Cipher
+   - Affine Cipher
 
 7. [PyNetworking](./7_Socket_Programming)
    - Simple HTTP Server (1 request)
