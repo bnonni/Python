@@ -10,3 +10,4 @@ docs
 .vscode/
 .ipynb_checkpoints/
 aux/
+__pycache__/
