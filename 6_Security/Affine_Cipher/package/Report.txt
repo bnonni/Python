@@ -1,0 +1,95 @@
+Experiment 2 Report
+CSc 4222 - Cyber Security
+Bryan W. Nonni
+
+System Design:
+- start (sh): Shell script initiates the Affine Cipher prompting user for a message to encrypt and then executes InitCypher.py
+- InitCypher.py: This is the entry point to the AffineCipher.py package. InitCypher.py calls in all functions from AffineCipher.py, as well as some system packages. It writes 10 keys to keys.txt, reads those into a variable and executes an excryption/decryption loop using each key.
+- AffineCipher.py: This module houses all necessary functions to execute the AffineCipher, including a_inverse, GCD, KeyGenerator, encryption and decryption. Additional helper functions provide extra functionality. These include writeKeys (generates 10 keys and writes them to a keys.txt file), readKeys (reads the 10 keys from the keys.txt file), decryptMessage (converts the decrypted code into readable ASCII characters) and writeCodes (writes each encrypted code string and decrypted code string to seprate decryption_codes.txt and encryption_codes.txt). 
+
+decryption_codes.txt:
+key: 5424 151 5423  || code: 65 112 112 108 101 
+key: 4116 4655 4115 || code: 65 112 112 108 101 
+key: 787 295 786    || code: 65 112 112 108 101 
+key: 3452 2367 3451 || code: 65 112 112 108 101 
+key: 2195 4410 2194 || code: 65 112 112 108 101 
+key: 5434 4473 5433 || code: 65 112 112 108 101 
+key: 5763 4315 5762 || code: 65 112 112 108 101 
+key: 5413 1550 5412 || code: 65 112 112 108 101 
+key: 2371 4322 2370 || code: 65 112 112 108 101 
+key: 4817 3102 4816 || code: 65 112 112 108 101 
+
+encryption_codes.txt:
+key: 5424 151 5423  || code: 357983 612911 612911 591215 553247 
+key: 4116 4655 4115 || code: 271655 465107 465107 448643 419831 
+key: 787 295 786    || code: 51941 88930 88930 85782 80273 
+key: 3452 2367 3451 || code: 227831 390075 390075 376267 352103 
+key: 2195 4410 2194 || code: 144869 248034 248034 239254 223889 
+key: 5434 4473 5433 || code: 358643 614041 614041 592305 554267 
+key: 5763 4315 5762 || code: 380357 651218 651218 628166 587825 
+key: 5413 1550 5412 || code: 357257 611668 611668 590016 552125 
+key: 2371 4322 2370 || code: 156485 267922 267922 258438 241841 
+key: 4817 3102 4816 || code: 317921 544320 544320 525052 491333 
+
+Full Terminal Output:
+Welcome to Affine Cipher PyCryption.
+Enter a message: Apple
+Message: Apple
+key #0: 5424 151 5423
+Encryption Code: 357983 612911 612911 591215 553247 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #1: 4116 4655 4115
+Encryption Code: 271655 465107 465107 448643 419831 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #2: 787 295 786
+Encryption Code: 51941 88930 88930 85782 80273 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #3: 3452 2367 3451
+Encryption Code: 227831 390075 390075 376267 352103 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #4: 2195 4410 2194
+Encryption Code: 144869 248034 248034 239254 223889 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #5: 5434 4473 5433
+Encryption Code: 358643 614041 614041 592305 554267 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #6: 5763 4315 5762
+Encryption Code: 380357 651218 651218 628166 587825 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #7: 5413 1550 5412
+Encryption Code: 357257 611668 611668 590016 552125 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #8: 2371 4322 2370
+Encryption Code: 156485 267922 267922 258438 241841 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple
+
+Message: Apple
+key #9: 4817 3102 4816
+Encryption Code: 317921 544320 544320 525052 491333 
+Decryption Code: 65 112 112 108 101 
+Decrypted Message: Apple 

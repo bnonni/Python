@@ -70,7 +70,7 @@ def encryption(key, plain_text):
     for i in range(len(plain_asci)):
         tmp = str(ord(plain_asci[i]) * a + b)
         cipher_text += tmp + ' '
-    writeCodes('encryption_codes.txt', key, cipher_text)
+    writeCodes('output/encryption_codes.txt', key, cipher_text)
     return cipher_text
 
 def decryption(key, pid, cipher_text):
@@ -91,7 +91,7 @@ def decryption(key, pid, cipher_text):
         if temp < 0:
             temp = temp + pid
         plain_text += str(temp) + ' '
-    writeCodes('decryption_codes.txt', key, plain_text)
+    writeCodes('output/decryption_codes.txt', key, plain_text)
     return plain_text
  
 def decryptMessage(plain_code):
