@@ -12,3 +12,4 @@ docs
 aux/
 __pycache__*
 4_Machine_Learning/Project/data/*
+.*
