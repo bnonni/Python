@@ -1,49 +1,49 @@
-#!/usr/bin/env python3
 import os
 import sys
 import subprocess
 import time
 
 
-def buildNetwork():
-    if len(sys.argv) < 2:
-        return exit("ERR: Please pass filepath to router data files.")
+def buildNetwork(args):
+    if len(args) < 2:
+        return exit("ERR: Please pass filepath to the router .dat files.")
 
-    router_conf_path = sys.argv[1]
-    if not os.path.exists(router_conf_path):
+    router_dat_path = args[1]
+    if not os.path.exists(router_dat_path):
         return exit("ERR: Directory does not exist.")
 
-    router_confs = os.listdir(router_conf_path)
-    network_size = len(router_confs)
+    router_dats = os.listdir(router_dat_path)
+    network_size = len(router_dats)
     ports = []
     nodes = ""
 
     print("Starting network with " + network_size.__str__() + " routers.")
 
     for i in range(network_size):
-        tmp = router_confs[i]
-        print("Select port in range 1025-65535 for router " + tmp[0] + ":")
-        flag = False
+        tmp = router_dats[i][0]
+        print("Select port in range 1025-65535 for router " + tmp + ":")
+        dats = True
 
-        while not flag:
+        while dats:
             try:
-                p = int(input())
-                ports.append(p)
-                flag = True
+                port = int(input())
+                ports.append(port)
+                dats = False
             except Exception as e:
                 return exit(str(e))
-        nodes = nodes + tmp[0] + ":" + str(ports[i])
-        if i + 1 != len(router_confs):
+        nodes = nodes + tmp + ":" + str(ports[i])
+        if i != len(router_dats) - 1:
             nodes = nodes + "-"
 
-    print(nodes)
-
     for i in range(network_size):
-        path = router_conf_path + "/" + router_confs[i]
-        print(path)
-        print(subprocess.call(['./Terminal', path, nodes], shell=True))
+        cwd = os.getcwd()
+        path = router_dat_path + router_dats[i]
+        subprocess.call(['./Terminal.scpt', f'{cwd}/Router.py ' + str(i+1) + ' ' + cwd + '/' + path + ' ' +
+                         str(network_size) + ' ' + nodes])
+        # os.system('sudo python3 Router.py ' + str(i+1) + ' ' + path + ' ' +
+        #           str(network_size) + ' ' + nodes)
         time.sleep(2)
 
 
 if __name__ == "__main__":
-    buildNetwork()
+    buildNetwork(sys.argv)
