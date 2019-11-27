@@ -4,14 +4,16 @@
 *    Author: Ashwin V Prabhu
 *    Date: May 23, 2017
 *    Code version: 1.0
-*    Availability: https://github.com/prabhuvashwin/Computer-Networks/blob/master/Distance%20Vector%20Routing/Router.py
+*    Availability: https://github.com/prabhuvashwin/Computer-Networks/blob/master/Distance%20Vector%20Routing/RouterAdmin.py
 ***************************************************************************************
+(Version 1.0) [Source code]. https://github.com/prabhuvashwin/Computer-Networks/blob/master/Distance%20Vector%20Routing/Router.py
 """
 import threading
+import socket
 import sys
 import time
-import threading
-import socket
+
+# Used for thread synchronization
 
 
 def synchronized(func):
@@ -36,6 +38,7 @@ class Router:
     neighbours = list()
     count = 1
 
+    # Method to initialize network vectors
     @staticmethod
     def InitializeNetworkVectors(length, nodesCommand):
         Router.networkVectors = [
@@ -151,7 +154,6 @@ class Router:
                     data = data + str(Router.vectorList[j])
                 if j + 1 != Router.vectorList.__len__():
                     data = data + ":"
-            data = bytes(data, 'utf-8')
             port = Router.portNumbers[Router.IndexOf(Router.neighbours[i])]
             Router.sock.sendto(data, ("127.0.0.1", port))
 
