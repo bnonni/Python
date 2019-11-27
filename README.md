@@ -1,37 +1,39 @@
 # Python 
 
-1. [FundamentalPy](./1_Fundamentals)
+1. [FundamentalPy](./Fundamentals)
 
-2. [Py++](./2_Packages)
+2. [Py++](./Packages)
    - Weather API
    - Matplotlib Data Viz
    - Panda Manipulation
    - More Advanced Programs & Scripting
 
-3. [PyApps](./3_Flask_Apps)
+3. [PyApps](./Flask_Apps)
    - Flask
    - SQLite
    - SQLAlchemy
 
-4. [PyLearning](./4_Machine_Learning)
+4. [PyLearning](./Machine_Learning)
    - KNN
    - Naive Bayes
    - Simple Linear Regression
    - Polynomial Regression
 
-5. [PyTesting](./5_Automated_Testing)
+5. [PyTesting](./Automated_Testing)
    - Selenium Webdriver
    - Screenshot Capture
    - Website QA
 
-6. [PyHacking](./6_Security)
+6. [PyHacking](./Security)
    - Password Salt Generator & Brute Force Password Cracker
    - Stream Cipher
    - Affine Cipher
+   - Beowulf Cluster DDoS Attack
 
-7. [PyNetworking](./7_Socket_Programming)
+7. [PyNetworking](./Socket_Programming)
    - Simple HTTP Server (1 request)
    - SMTP (gmail)
    - UDP Ping-Pong (server-client => request-response)
+   - Distance Vector Routing Algorithm
 
 * DISCLOSURE: Code for certain programs in folders 2 & 3 were adapted from the [GT Data Science & Analytics Bootcamp](https://bootcamp.pe.gatech.edu/data/) cirriculum 

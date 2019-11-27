@@ -1,0 +1,24 @@
+graph{
+    Wind -- Strong;
+    Strong -- Humidity;
+    Humidity -- High;
+    Humidity -- Normal;
+    High -- Play;
+    Normal -- Outlook;
+    Outlook -- Overcast;
+    Outlook -- Rain;
+    Overcast -- PLAY;
+    Rain -- NoPlay;
+    
+    Wind -- Weak;
+    Weak -- _Outlook_;
+    _Outlook_ -- Sunny;
+    _Outlook_ -- _Rain_;
+    Sunny -- No_Play
+    _Rain_ -- Temperature;
+    Temperature -- Hot;
+    Temperature -- Cool;
+    Hot -- _Play_;
+    Cool -- NO_PLAY;
+    
+}

@@ -1,7 +1,0 @@
-Gaussian:
-all features: 77.7% 
-drop SkinThickness: 77.4% X
-drop insulin: 79.7% X
-drop pregnancies: 75.6%
-drop DiabetesPedigreeFunction: 76.8%
-drop BMI: 75.8%

@@ -1,1 +1,0 @@
-if hyperthreaeding is available on system, # of threads = 2x # of cores
