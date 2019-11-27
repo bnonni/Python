@@ -1,8 +1,6 @@
 # f(un)*society00
 ## Operation WulfDoS
 
-![](notes/Master_NFC.jpg)
-![](notes/Tower.jpg)
 [Checkout the Demo](https://www.youtube.com/watch?v=kQaJA66kncU&feature=youtu.be)
 
 Description & Purpose:
@@ -39,3 +37,5 @@ Technical Specifications:
     - Bash/Shell Scripting
 
 ## WulfDoS: the packet flood is coming...
+![](notes/Master_NFC.jpg)
+![](notes/Tower.jpg)
