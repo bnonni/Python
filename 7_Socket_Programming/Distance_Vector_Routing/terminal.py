@@ -7,7 +7,7 @@
 *    Code version: 26.0 (based on number of commits)
 *    Availability: https://github.com/skywind3000/terminal/blob/master/terminal.py
 ***************************************************************************************
-(Version 1.0) [Source code]. https://github.com/skywind3000/terminal/blob/master/terminal.py 
+(Version 26.0) [Source code]. https://github.com/skywind3000/terminal/blob/master/terminal.py 
 """
 import sys, os, time
 import subprocess
