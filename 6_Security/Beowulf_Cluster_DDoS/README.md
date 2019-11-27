@@ -1,7 +1,7 @@
 # f(un)*society00
 ## Operation WulfDoS
 
-[Checkout the Demo](https://www.youtube.com/watch?v=kQaJA66kncU&feature=youtu.be)!(notes/Master_NFC.jpg)
+![notes/Master_NFC.jpg](https://www.youtube.com/watch?v=kQaJA66kncU&feature=youtu.be)
 
 Description & Purpose:
   * Operation WulfDoS is an attempt to DDoS attack an intentionally vulnerable linux OS running on Raspberry Pi: [RasPwn](https://raspwn.org/index).
