@@ -1,0 +1,36 @@
+def create_distance_matrix(D):
+    DM = {}
+    for i in D:
+        for j in D:
+            ld = round(abs(D.get(i) - D.get(j)), 3)
+            DM.update({ f'{i}-{j}' : ld })
+    return DM
+DM = create_distance_matrix(D2)
+------------------------------------------------------------------------
+D = create_distances_obj(names, x, y, C1[0], C1[1], C2[0], C2[1])
+G1, G2 = groups(D, names, points)
+C1, C2 = recalculate_centroids(G1, G2)
+stable = check_stability(G1, G2)
+
+print('Round 3\n')
+print('Points: ')
+for p in points:
+    print(f'{p}: {points.get(p)}')
+print(f'\nDistances:')
+for d in D:
+    print(f'{d}: {D.get(d)}')
+print(f'\nGroup 1: {G1}, length: {len(G1)}\nGroup 2: {G2}, length: {len(G2)}\n')
+print(f'Centroid 1: {C1}\nCentroid 2: {C2}\n')
+print(stable)
+------------------------------------------------------------------------
+agglo_shortp = shortest_path(agglo_D)
+def shortest_path(D):
+    shortest = 0
+    for i in D:
+        for j in D:
+            temp = D[i]
+            if temp < D[j]:
+                shortest = temp
+            else:
+                G1.append(points[k])
+        return G1, G2
