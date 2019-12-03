@@ -7,8 +7,7 @@
 1. Complete questions in assigned .ipynb file
     - [Frankie](./Frankie.ipynb)
     - [Bryan](./Bryan.ipynb)
-2. Create 2 slides per question
-    - Slide 1: Question Definition & Answer Strategy
-    - Slide 2: Implementation Details
+2. Create 1 slide per question
+    - Slide: Solution Details & Implementation
 3. Add slides to [ML_Project_Pres.pptx](./ML_Project_Pres.pptx)
 4. Communicate progress
