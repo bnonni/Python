@@ -5,25 +5,29 @@ import pandas as pd
 from impyute.imputation.cs import fast_knn
 
 def countUniqueValues(data):
-    print(f'Values: {Counter(data).keys()}\nKeys: {Counter(data).values()}')
+    keys = Counter(data).keys()
+    vals = Counter(data).values()
+    no_labels = len(keys)
+    print(f'#Labels: {no_labels}\nValues: {keys}\nKeys: {vals}')
+    return keys, vals, no_labels
 
 def printShapes(**kwargs):
     for key, value in kwargs.items():
-        print(f'\n{key} Shape: {value}')
+        print(f'{key} Shape: {value}\n')
         
 def printHeads(**kwargs):
     for key, value in kwargs.items():
-        print(f'\n{key} Head: {value}\n')
+        print(f'{key} Head: {value}\n')
         
 def printTails(**kwargs):
     for key, value in kwargs.items():
-        print(f'\n{key} Tail: {value}')
+        print(f'{key} Tail: {value}\n')
         
 def replaceWithNan(df, r, c):
     n = df.iloc[r][c]
     for i in df.keys():
         df[i] = df[i].replace(n, np.nan)
-    print(f'Bad Values {n} replaced with NaN. Run')
+    print(f'Bad Values {n} replaced with NaN.')
     return df
 
 def runFastKNN(df, k):

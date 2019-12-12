@@ -18,8 +18,8 @@ def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
         tuner_val = kwargs['tuner_val']
         dec = kwargs['dec']
         label_len = kwargs['label_len']
+        labels = kwargs['labels']
         
-    labels = np.arange(1, label_len+1)
     y_bin = label_binarize(y_test, classes=labels)
 
     clf = OneVsRestClassifier(LinearSVC(multi_class='ovr', random_state=0))
@@ -30,25 +30,25 @@ def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
     tpr = dict()
     roc_auc = dict()
     for i in range(label_len):
-        fpr[i+1], tpr[i+1], thresholds = roc_curve(y_bin[:, i], y_pred)
-        roc_auc[i+1] = auc(fpr[i+1], tpr[i+1])
+        fpr[i], tpr[i], thresholds = roc_curve(y_bin[:, i], y_score)
+        roc_auc[i] = auc(fpr[i], tpr[i])
     
     for i in range(label_len):
-        if math.isnan(roc_auc[i+1]):
+        if math.isnan(roc_auc[i]):
             score = 0
         else: 
-            score = round(roc_auc[i+1],2)
+            score = round(roc_auc[i], 4)
         if (tuner == '') or (tuner_val == None):
-            plt.plot(fpr[i+1], tpr[i+1], label=f'{model}')
+            plt.plot(fpr[i], tpr[i], label=f'{model}')
         else:
-            plt.plot(fpr[i+1], tpr[i+1], label=f'{model}, {tuner}={tuner_val}')
+            plt.plot(fpr[i], tpr[i], label=f'{model}, {tuner}={tuner_val}')
         plt.plot([0, 1], [0, 1], label='tpr-fpr line')
         plt.xlabel('fpr')
         plt.ylabel('tpr')
         if dec == True:
-            plt.title(f'{model} ROC Curve Label {i+1}, ROC_Score={score}')
+            plt.title(f'{model} ROC Curve Label {labels[i]}, ROC_Score={score}')
             tuner_val -= 1
         else:
-            plt.title(f'{model} ROC Curve Label {i+1}, ROC_Score={score}')
+            plt.title(f'{model} ROC Curve Label {labels[i]}, ROC_Score={score}')
         plt.legend()
         plt.show()

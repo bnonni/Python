@@ -18,6 +18,8 @@
 # * Performance Comparison
 #     - Classification Accuracy, Precision, Recall, Sensitivity, Specificity
 #     - AUC, ROC Curve
+# In[00]:
+os.chdir('/Users/hu5ky5n0w/Desktop/Github_Repos/Data/Python/Machine_Learning/Project/Bryan/1P')
 # In[0]:
 # take out the trash
 import gc
@@ -62,12 +64,6 @@ from LR import *
 from RF import *
 from SVM import *
 
-# In[1]:
-cwd = os.getcwd();
-os.chdir(cwd)
-
-# In[2]:
-pwd
 
 # In[3]:
 
@@ -424,6 +420,147 @@ for k in kernels:
 
 
 X_train4.shape
+
+
+# In[49]:
+
+
+X_train4.head()
+
+
+# In[28]:
+
+
+X_test4.shape
+
+
+# In[53]:
+
+
+X_test4.head()
+
+
+# In[54]:
+
+
+y_train4.shape
+
+
+# In[52]:
+
+
+y_train4.head()
+
+
+# In[55]:
+
+
+X_test4.tail()
+
+
+# In[56]:
+
+
+X_train4_cmp, X_test4_cmp = trainPCA(X_train4, X_test4)
+
+
+# In[57]:
+
+
+X_train4_cmp.shape
+
+
+# In[58]:
+
+
+X_test4_cmp.shape
+
+
+# ## KNN for DS4
+
+# In[59]:
+
+
+neighbors4, train_accuracy4 = testK(X_train4_cmp, y_train4)
+plotTestK(neighbors4, train_accuracy4)
+
+
+# In[60]:
+
+
+y_test4 = getTestLabelsKNN(3, X_train4_cmp, y_train4, X_test4_cmp)
+n4, test_acc4, train_acc4 = optimizeK(X_train4_cmp, y_train4, X_test4_cmp, y_test4)
+plotK(n4, test_acc4, train_acc4)
+
+
+# In[61]:
+
+
+countUniqueValues(y_test4)
+
+
+# In[39]:
+
+
+knn_score4, knn_y_pred4 = runKNN(5, X_train4_cmp, y_train4, X_test4_cmp, y_test4)
+print(f'Accuracy: {knn_score4}')
+
+
+# In[40]:
+
+
+n_neighbors4=5
+getScoresKNN(n_neighbors4, y_test4, knn_y_pred4)
+pd.crosstab(y_test4, knn_y_pred4, rownames=['True'], colnames=['Predicted'], margins=True)
+calcMultiClassROCAUC(X_train4_cmp, y_train4, X_test4_cmp, knn_y_pred4, model='KNN', tuner='k',\
+ tuner_val=n_neighbors4, label_len=9, dec=False)
+
+
+# ## LR for DS4
+
+# In[85]:
+
+
+c4 = 20
+lr_cma4, lr_cr4, lr_acc4, lr_y_pred4, ky4, val4 = runLogisticRegression(c4, X_train4, y_train4, X_test4, y_test4)
+print(f'Logistic Regression Highest Accuracy Score, C={c4}: {val4}\n')
+print(f'Logistic Regression Most Accurate Confusion Matrix\n\n{lr_cma4[ky4]}\n')
+pd.crosstab(y_test4, lr_y_pred4[ky4], rownames=['True'], colnames=['Predicted'], margins=True)
+
+
+# In[89]:
+
+
+print(f'\n\t   Logistic Regression Classification Report C={c4}\n\n{lr_cr4[ky4]}')
+calcMultiClassROCAUC(X_train4, y_train4, X_test4, lr_y_pred4[ky4], model='LR', tuner='c', tuner_val=c4, label_len=9, dec=True)
+
+
+# ## Random Forest for DS4
+
+# In[90]:
+
+
+runRandomForest(X_train4, y_train4, X_test4, y_test4, 9)
+
+
+# ## SVM for DS4
+
+# In[41]:
+
+
+kernels = ['linear', 'poly', 'rbf', 'sigmoid']
+for k in kernels:
+    print(f'SVM {k} Kernel results\n_________________________________________')
+    runSVM(k, 9, X_train4_cmp, y_train4, X_test4_cmp, y_test4)
+    
+    
+    
+# # Dataset 5
+
+# In[48]:
+
+
+X_train5.shape
 
 
 # In[49]:
