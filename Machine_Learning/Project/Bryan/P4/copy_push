@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./clean
+cp -r ~/Desktop/Github_Repos/Data/Python/Machine_Learning/Project/ ~/Desktop/ML_Project/
+cd ~/Desktop/ML_Project
+git add .
+git commit -m "commiting changes"
+git push -u origin master
+cd ~/Desktop/Github_Repos/Data/Python/Machine_Learning/Project
