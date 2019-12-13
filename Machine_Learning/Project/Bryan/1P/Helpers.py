@@ -8,7 +8,7 @@ def countUniqueValues(data):
     keys = Counter(data).keys()
     vals = Counter(data).values()
     no_labels = len(keys)
-    print(f'#Labels: {no_labels}\nValues: {keys}\nKeys: {vals}')
+    print(f'Keys: {keys}\nValues: {vals}')
     return keys, vals, no_labels
 
 def printShapes(**kwargs):
