@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import *
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import *
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score, auc, accuracy_score
 
 def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
@@ -22,8 +23,8 @@ def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
     y_train_bin = label_binarize(y_train, classes=labels)
     n_classes = y_train_bin.shape[1]
     y_test_bin = label_binarize(y_test, classes=labels)
-
-    clf = OneVsRestClassifier(OneVsRestClassifier(SVC(kernel='linear', probability=True, random_state=0)))
+# SVC(kernel='linear', probability=True, random_state=0)
+    clf = OneVsRestClassifier(AdaBoostClassifier())
     y_score = clf.fit(X_train, y_train_bin).decision_function(X_test)
 
     fpr = dict()
@@ -41,11 +42,10 @@ def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
     plt.plot(fpr["micro"], tpr["micro"],  label=f'{model} Micro-Avg Area: {round(roc_auc["micro"], 4)}')
     for i in range(n_classes):
         plt.plot(fpr[i], tpr[i], label=f'{model} Area: {round(roc_auc[i], 4)}')
-        if dec == True:
-            plt.title(f'{model} ROC Curve, Label {labels[i]}, {tuner}={tuner_val}')
-            tuner_val -= 1
+        if tuner_val == None:
+          plt.title(f'{model} ROC Curve, Label {labels[i]}')
         else:
-            plt.title(f'{model} ROC Curve, Label {labels[i]}')
+          plt.title(f'{model} ROC Curve, Label {labels[i]}, {tuner}={tuner_val}')
         plt.plot([0, 1], [0, 1], label='tpr-fpr line')
         plt.xlabel('fpr')
         plt.ylabel('tpr')

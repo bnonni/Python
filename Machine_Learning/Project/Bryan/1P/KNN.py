@@ -17,11 +17,9 @@ from sklearn.model_selection import GridSearchCV
 warnings.filterwarnings('ignore')
 np.random.seed(1)
 gc.collect()
-# %matplotlib inline
 from AccuracyMetrics import *
 
 def testK(X_train, y_train):
-    # KNN to obtain optimal k for y_test1 values
     neighbors = np.arange(1,20)
     train_accuracy = np.empty(len(neighbors))
     for i,k in enumerate(neighbors):
@@ -40,19 +38,20 @@ def plotTestK(neighbors, train_accuracy):
     plt.show()
     
     
-def optimizeK(X_train, y_train, X_test, y_test):
-    neighbors = np.arange(1,20)
+def optimizeK(X_train, y_train, X_test, y_test, e):
+    neighbors = np.arange(1,e)
     train_accuracy = np.empty(len(neighbors))
     test_accuracy = np.empty(len(neighbors))
     
     for i,k in enumerate(neighbors):
-     knn = KNeighborsClassifier(n_neighbors=k)
-     knn.fit(X_train, y_train)
-     train_accuracy[i] = knn.score(X_train, y_train)
-     test_accuracy[i] = knn.score(X_test, y_test)
+        knn = KNeighborsClassifier(n_neighbors=k)
+        knn.fit(X_train, y_train)
+        train_accuracy[i] = knn.score(X_train, y_train)
+        test_accuracy[i] = knn.score(X_test, y_test)
     return neighbors, test_accuracy, train_accuracy
 
-def plotK(neighbors, test_accuracy, train_accuracy):
+def plotK(neighbors, test_accuracy, train_accuracy, fs):
+    plt.figure(figsize=fs)
     plt.plot(neighbors, test_accuracy, label='Testing Accuracy')
     plt.plot(neighbors, train_accuracy, label='Training Accuracy')
     plt.legend()

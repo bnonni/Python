@@ -107,7 +107,7 @@ X_test6 = pd.read_csv('../data/1/TestData6.txt', delimiter='\s+', header=None)
 
 # In[8]:
 
-
+AdaBoostClassifier()
 X_training = [X_train2, X_train3, X_train4, X_train5, X_train6]
 y_training = [y_train2, y_train3, y_train4, y_train5, y_train6]
 X_testing = [X_test2, X_test3, X_test4, X_test5, X_test6]

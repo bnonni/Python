@@ -7,9 +7,11 @@ from impyute.imputation.cs import fast_knn
 def countUniqueValues(data):
     keys = Counter(data).keys()
     vals = Counter(data).values()
-    no_labels = len(keys)
-    print(f'Keys: {keys}\nValues: {vals}')
-    return keys, vals, no_labels
+    labels=[]
+    for i in keys:
+      labels.append(i)
+    print(f'Keys: {keys}\nValues: {vals}\nLabels: {labels}')
+    return keys, vals, labels
 
 def printShapes(**kwargs):
     for key, value in kwargs.items():
