@@ -1,0 +1,42 @@
+Question 1, DS2 - DS6:
+-We used KNN to compute y_test values for all datasets for Q1.
+-We used a for loop to isolate bad values and replace with NaN, then inputed NaN with fast_knn for any DS with bad numbers.
+-We implemented each model on each dataset as time would allow.
+Dataset 2:
+-We used PCA to reduce dimentionality and find the most valuable features.
+-74 components resulted in an explained variance of 93%
+
+Results:
+KNN k=10 accuracy=86%, Best ROC AUC score=98.6%, Label 11
+LR c=5, accuracy=54%, Best ROC AUC score=92%, Label 2
+RF: Accuracy=27%, Best ROC AUC score=91%, Label 6
+SVM linear: Accuracy=51%, Best ROC AUC=92%, Label 2
+SVM Poly Accuracy=38%, Best ROC AUC=100%, Label 5
+SVM Sigmoid Accuracy=45%, Best ROC AUC=91%, Label 8
+
+Dataset 3:
+KNN: k=9, Accuracy=47%, Best ROC AUC score=85%, Label 1
+LR:c=15, Accuracy=27%, Best ROC AUC score=89%, Label 8
+RF: Accuracy=42%, Best ROC AUC score=92%, Label 1
+SVM linear: Accuracy=26%, Best ROC AUC=92%, Label 8
+SVM Poly Accuracy=33%, Best ROC AUC=90%, Label 1
+
+Dataset 4:
+KNN: k=5, Accuracy=82%, Best ROC AUC score=96%, Label 8
+LR:c=3, Accuracy=63%, Best ROC AUC score=94%, Label 4
+RF: Accuracy=75%, Best ROC AUC=99%, Label 9
+SVM linear: Accuracy=20%, Best ROC AUC=65%, Label 8
+SVM Poly Accuracy=50%, Best ROC AUC=64%, Label 7
+SVM rbf Accuracy=49%, Best ROC AUC=60%, Label 8
+SVM rbf Accuracy=18%, Best ROC AUC=60%, Label 8
+
+Dataset 5:
+KNN: k=15, Accuracy=61%, Best ROC AUC score=84%, Label 7
+LR: c=3, Accuracy=60%, Best ROC AUC score=92%, Label 5
+RF: Accuracy=61%, Best ROC AUC score=99%, Label 8
+
+Dataset 6:
+KNN: k=8, Accuracy=25%, Best ROC AUC score=89%, Label 792500
+LR:c=3, Accuracy=2%, Best ROC AUC score=99.6%, Label 2000000
+RF: Accuracy=10%, Best ROC AUC score=99%, Label 1750000
+SVM linear: Accuracy=10%, Best ROC AUC=97%, Label 874125
