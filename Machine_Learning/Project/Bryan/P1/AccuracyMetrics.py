@@ -12,7 +12,9 @@ from sklearn.svm import *
 from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score, auc, accuracy_score
 
 def getAccuracyMetrics(y_test, y_pred):
+    
     cm = confusion_matrix(y_test, y_pred)
     cra = classification_report(y_test, y_pred)
     acc = accuracy_score(y_test, y_pred)
+
     return cm, cra, acc
