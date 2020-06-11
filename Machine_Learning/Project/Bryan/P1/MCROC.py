@@ -12,7 +12,7 @@ from sklearn.svm import *
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score, auc, accuracy_score
 
-def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
+def calc_multi_class_roc_auc(X_train, y_train, X_test, y_test, **kwargs):
     for k,v in kwargs.items():
         model = kwargs['model']
         tuner = kwargs['tuner']
@@ -23,7 +23,7 @@ def calcMultiClassROCAUC(X_train, y_train, X_test, y_test, **kwargs):
     y_train_bin = label_binarize(y_train, classes=labels)
     n_classes = y_train_bin.shape[1]
     y_test_bin = label_binarize(y_test, classes=labels)
-# SVC(kernel='linear', probability=True, random_state=0)
+
     clf = OneVsRestClassifier(AdaBoostClassifier())
     y_score = clf.fit(X_train, y_train_bin).decision_function(X_test)
 
