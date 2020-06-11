@@ -10,20 +10,20 @@ def num(n):
         n = int(n)
     return int(s)
 
-def count_twos(yes, s, x, n):
+def count_twos(s, x, n):
     print('Start!')
     l = []
-    while(yes):
+    while True:
         s += num(x)
         l.append((x, s-x))
         x += 1
         if x == n:
             yes = False
-        if x % 1000000 == 0:
-            print(f'iter: {x}')
+        if x % 10 == 0:
+            print(f'iteration: {x}')
     return l
 
-data = count_twos(True, 0, 1, 1000000000)
+data = count_twos(0, 1, 1000000000)
 
 print('Done counting! Splitting x & y!')
 x = []
@@ -32,11 +32,10 @@ y = []
 for i,p in enumerate(data):
     x.append(data[i][0])
     y.append(data[i][1])
-    if i % 10000000 == 0:
-        print(f'iter: {i}')
+    if i % 10000 == 0:
+        print(f'iteration: {i}')
 
 print('Plotting data! Please standby!')
 plt.plot(x, y)
-plt.show()
-
+plt.savefig('countwos.png')
 
