@@ -1,17 +1,42 @@
 from hashlib import sha256
 
-one, two, three, four = '1', '2', '3', '4'
+def hash(s):
+ return sha256(s.encode())
 
-def h(s): return sha256(s.encode()).hexdigest()
+def digest(h):
+ return h.hexdigest()
 
-leaf0 = h(one)
-leaf1 = h(two)
-leaf2 = h(three)
-leaf3 = h(four)
+zero, one, two, three = '0', '1', '2', '3'
 
-leaf4 = h(leaf0 + leaf1)
-leaf5 = h(leaf2 + leaf3)
+leaf0 = hash(zero)
+leaf1 = hash(one)
+leaf2 = hash(two)
+leaf3 = hash(three)
 
-root = h(leaf4 + leaf5)
+leaf01 = hash( leaf0.hexdigest() + leaf1.hexdigest())
+leaf23 = hash( leaf2.hexdigest() + leaf3.hexdigest())
 
-print(f'root hash {root}')
+root = hash(leaf01.hexdigest() + leaf23.hexdigest())
+
+print(f'root hash: {root.digest()}')
+
+'''
+    (root hash)
+       h0123
+     ____|____
+    |         |
+   h01       h23
+   _|_       _|_
+ h0   h1   h2   h3
+ |    |    |    |
+ 0    1    2    3
+'''
+
+class Leaf:
+ def __init__(self, sum, hash):
+  self.sum = sum
+  self.hash = hash
+
+class MerkleSumTree(Leaf):
+ def __init__(self, Leaf):
+  self.Leaf = Leaf
