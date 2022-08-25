@@ -1,19 +1,5 @@
 from hashlib import sha256
 
-UTXO = dict(
-    txid="0529558696101c85fd4de3deaf654c5aa7ffbacf795db85a137ec9dec2502d17",
-    vout=0,
-    address="bcrt1qaja9yk4vxmvjferq6hwln6n4fum6hy99juq8rr",
-    label="",
-    scriptPubKey="0014ecba525aac36d924e460d5ddf9ea754f37ab90a5",
-    amount=50,
-    confirmations=110,
-    spendable=True,
-    solvable=True,
-    desc="wpkh([1abf2856/0'/0'/1']03bbb27d64230fd4e15d2ba3e917ef08a9a77e5e0906e2c12bf177a6c71c745a89)#6h39zl8m",
-    safe=True,
-)
-
 def int_to_little_endian(n, length):
     '''endian_to_little_endian takes an integer and returns the little-endian
     byte sequence of length'''
